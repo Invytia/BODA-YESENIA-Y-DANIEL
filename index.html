@@ -47,7 +47,7 @@
         }
 
         /* ==========================================================================
-           ANIMACIONES GLOBALES Y DESTELLOS MÁGICOS
+           ANIMACIONES GLOBALES Y DESTELLOS
            ========================================================================== */
         @keyframes shimmerText {
             0% { background-position: -200% center; }
@@ -71,17 +71,6 @@
             100% { width: 50px; opacity: 1; }
         }
 
-        @keyframes sparkleAnim {
-            0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
-            50% { opacity: 1; transform: scale(1.2) rotate(180deg); }
-        }
-
-        @keyframes magicDust {
-            0% { transform: translateY(0) scale(1); opacity: 0; }
-            50% { opacity: 0.8; }
-            100% { transform: translateY(-50px) scale(0.5); opacity: 0; }
-        }
-
         .shimmer-text {
             background: linear-gradient(90deg, var(--accent-color) 0%, var(--gold) 30%, #fff 50%, var(--gold) 70%, var(--accent-color) 100%);
             background-size: 200% auto;
@@ -96,32 +85,7 @@
             color: var(--gold);
         }
 
-        /* Contenedor de polvito mágico y estrellas */
-        .sparkle-container {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0; left: 0;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .sparkle {
-            position: absolute;
-            color: var(--gold);
-            font-size: 1.2rem;
-            animation: sparkleAnim 3s infinite ease-in-out;
-            filter: drop-shadow(0 0 5px var(--gold));
-        }
-        .sparkle.bugambilia { color: var(--accent-color); filter: drop-shadow(0 0 5px var(--accent-color)); }
-
-        .sparkle:nth-child(1) { top: 5%; left: 15%; animation-delay: 0s; font-size: 0.9rem;}
-        .sparkle:nth-child(2) { top: 25%; right: 10%; animation-delay: 1.5s; font-size: 1.6rem;}
-        .sparkle:nth-child(3) { bottom: 15%; left: 10%; animation-delay: 0.7s; font-size: 1.2rem;}
-        .sparkle:nth-child(4) { bottom: 8%; right: 15%; animation-delay: 2.2s; font-size: 1rem;}
-        .sparkle:nth-child(5) { top: 45%; left: 5%; animation-delay: 1.1s; font-size: 0.8rem;}
-
-        /* --- Transiciones de aparición (Más dramáticas) --- */
+        /* --- Transiciones de aparición (Elegantes y dramáticas) --- */
         .fade-in {
             opacity: 0; 
             transform: translateY(50px);
@@ -324,6 +288,37 @@
             box-shadow: 0 20px 50px rgba(74, 27, 44, 0.3);
             overflow: hidden;
         }
+        
+        /* Pie de página Invytia */
+        .invytia-footer {
+            margin-top: 50px;
+            padding-bottom: 10px;
+            text-align: center;
+            width: 100%;
+        }
+        .invytia-footer p { margin: 0; }
+        .invytia-label {
+            font-family: var(--font-sans);
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            color: var(--text-color);
+            opacity: 0.6;
+        }
+        .invytia-brand {
+            font-family: var(--font-title);
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: var(--accent-color);
+            margin: 5px 0 !important;
+        }
+        .invytia-sub {
+            font-family: var(--font-sans);
+            font-size: 0.6rem;
+            letter-spacing: 4px;
+            color: var(--gold);
+            font-weight: 600;
+        }
 
         @media (max-width: 992px) {
             .invitation-container { grid-template-columns: 1fr; border-radius: 0; box-shadow: none;}
@@ -335,7 +330,6 @@
 
     <!-- AUDIO (Oculto) -->
     <audio id="bg-audio" loop>
-        <!-- Reemplaza con la ruta de tu canción mágica -->
         <source src="assets/song.mp3" type="audio/mpeg">
     </audio>
 
@@ -347,7 +341,7 @@
             <div class="seal glowing-icon">Y&D</div>
             <div class="envelope-body"></div>
         </div>
-        <div class="envelope-text">Toca para abrir la magia</div>
+        <div class="envelope-text">Toca para abrir</div>
     </div>
 
     <!-- BOTÓN DE MÚSICA STICKY -->
@@ -362,15 +356,6 @@
             <!-- ================= COLUMNA 1: HERO, PADRES Y FECHA ================= -->
             <div class="column col-light">
                 
-                <!-- Destellos flotantes Mágicos -->
-                <div class="sparkle-container fade-in">
-                    <i class="fa-solid fa-star sparkle"></i>
-                    <i class="fa-solid fa-sparkles sparkle bugambilia"></i>
-                    <i class="fa-solid fa-star sparkle"></i>
-                    <i class="fa-solid fa-sparkles sparkle"></i>
-                    <i class="fa-solid fa-star sparkle bugambilia"></i>
-                </div>
-
                 <p class="invite-text fade-in">TENEMOS EL HONOR DE INVITARTE A NUESTRA</p>
                 <div class="invite-boda fade-in scale-in">Boda Religiosa</div>
 
@@ -578,16 +563,18 @@
                 </div>
 
                 <div class="dark-block fade-in scale-in">
-                    <!-- Efecto de chispas fondo oscuro -->
-                    <div class="sparkle-container">
-                        <i class="fa-solid fa-star sparkle" style="top: 10%; left: 10%;"></i>
-                        <i class="fa-solid fa-sparkles sparkle" style="bottom: 20%; right: 15%;"></i>
-                    </div>
-                    
                     <h3 class="shimmer-text" style="font-family: var(--font-script); font-size: 5rem; margin-bottom: 20px; background-image: linear-gradient(90deg, var(--gold) 0%, #fff 30%, var(--cream) 50%, #fff 70%, var(--gold) 100%); line-height: 1;">¡Gracias!</h3>
-                    <p style="font-size: 1.25rem; margin-bottom: 35px; font-style: italic; color: var(--cream); font-weight: 300;">Tu presencia hará de este día un momento verdaderamente mágico e inolvidable.</p>
+                    <p style="font-size: 1.25rem; margin-bottom: 35px; font-style: italic; color: var(--cream); font-weight: 300;">Tu presencia hará de este día un momento verdaderamente inolvidable.</p>
                     <div style="font-family: var(--font-sans); letter-spacing: 6px; font-size: 1.1rem; text-transform: uppercase; color: var(--gold); font-weight: 700;">Yesenia & Daniel</div>
                 </div>
+                
+                <!-- FOOTER INVYTIA -->
+                <div class="invytia-footer fade-in">
+                    <p class="invytia-label">DISEÑADO POR</p>
+                    <p class="invytia-brand">INVYTIA</p>
+                    <p class="invytia-sub">ESSENTIAL DESIGN</p>
+                </div>
+
             </div>
 
         </div>
